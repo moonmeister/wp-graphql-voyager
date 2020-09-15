@@ -12,4 +12,4 @@ Brings the GraphiQL IDE to the WP-Admin
 
 == Description ==
 
-Brings the GraphiQL IDE to the WP-Admin, with Authentication built-in.
+Brings GraphQL Voyager to the WP-Admin, with Authentication built-in.

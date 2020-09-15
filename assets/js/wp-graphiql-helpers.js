@@ -1,6 +1,6 @@
-$j=jQuery.noConflict();
+$j = jQuery.noConflict();
 
-$j(document).ready(function(){
+$j(document).ready(function () {
 
   $j('.update-nag').hide();
   $j('.error').hide();
@@ -9,7 +9,7 @@ $j(document).ready(function(){
   $wpWrapHeight = $j('#wpwrap').height();
   $adminBarHeight = $j('#wpadminbar').height();
   $footerHeight = $j('#wpfooter').height();
-  $height = ( $wpWrapHeight - $adminBarHeight - $footerHeight - 65 );
-  $graphiqlHeight = ( $defaultHeight < $height ) ? $defaultHeight : $height;
-  $j('#wp-graphiql').css( 'height', $graphiqlHeight );
+  $height = ($wpWrapHeight - $adminBarHeight - $footerHeight - 65);
+  $graphiqlHeight = ($defaultHeight < $height) ? $defaultHeight : $height;
+  $j('#wp-graphql-voyager').css('height', $graphiqlHeight);
 });

@@ -1,11 +1,10 @@
-
 {
-  "name": "wp-graphiql",
-  "description": "This plugin provides the GraphiQL IDE as an admin page in WordPress, allowing the GraphQL WPGraphQL schema to be browsed from within WordPress.",
-  "author": "WPGraphQL, Digital First Media, Jason Bahl",
+  "name": "wp-graphql-voyager",
+  "description": "This plugin provides the GraphQL Voyager interactive graph as an admin page in WordPress, allowing the GraphQL WPGraphQL schema to be browsed from within WordPress.",
+  "author": "Alex Moon, WPGraphQL, Jason Bahl",
   "homepage": "http://wpgraphql.com",
   "bugs": {
-    "url": "https://github.com/wp-graphql/wp-graphiql/issues"
+    "url": "https://github.com/wp-graphql/wp-graphql-voyager/issues"
   },
   "version": "1.0.0",
   "private": true,
