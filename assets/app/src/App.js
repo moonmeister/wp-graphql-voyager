@@ -6,6 +6,7 @@ import "whatwg-fetch"
  * Style the app
  */
 import './app.css';
+import 'graphql-voyager/dist/voyager.css'
 
 const parameters = {}
 
