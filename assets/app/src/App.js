@@ -8,33 +8,33 @@ import "whatwg-fetch"
 import './app.css';
 import 'graphql-voyager/dist/voyager.css'
 
-const parameters = {}
+// const parameters = {}
 
-window.location.search
-	.substr(1)
-	.split(`&`)
-	.forEach(function (entry) {
-		var eq = entry.indexOf(`=`)
-		if (eq >= 0) {
-			parameters[decodeURIComponent(entry.slice(0, eq))] = decodeURIComponent(entry.slice(eq + 1).replace(/\+/g, '%20'))
-		}
-	})
+// window.location.search
+// 	.substr(1)
+// 	.split(`&`)
+// 	.forEach(function (entry) {
+// 		var eq = entry.indexOf(`=`)
+// 		if (eq >= 0) {
+// 			parameters[decodeURIComponent(entry.slice(0, eq))] = decodeURIComponent(entry.slice(eq + 1).replace(/\+/g, '%20'))
+// 		}
+// 	})
 
-// Derive a fetch URL from the current URL, sans the GraphQL parameters.
-const graphqlParamNames = {
-	query: true,
-	variables: true,
-	operationName: true,
-	explorerIsOpen: true,
-}
+// // Derive a fetch URL from the current URL, sans the GraphQL parameters.
+// const graphqlParamNames = {
+// 	query: true,
+// 	variables: true,
+// 	operationName: true,
+// 	explorerIsOpen: true,
+// }
 
-const otherParams = {}
+// const otherParams = {}
 
-for (var k in parameters) {
-	if (parameters.hasOwnProperty(k) && graphqlParamNames[k] !== true) {
-		otherParams[k] = parameters[k]
-	}
-}
+// for (var k in parameters) {
+// 	if (parameters.hasOwnProperty(k) && graphqlParamNames[k] !== true) {
+// 		otherParams[k] = parameters[k]
+// 	}
+// }
 
 const nonce = (window.wpGraphQLVoyagerSettings && window.wpGraphQLVoyagerSettings.nonce) ? window.wpGraphQLVoyagerSettings.nonce : null;
 const endpoint = (window.wpGraphQLVoyagerSettings && window.wpGraphQLVoyagerSettings.graphqlEndpoint) ? window.wpGraphQLVoyagerSettings.graphqlEndpoint : window.location.origin;
@@ -55,7 +55,7 @@ function graphQLFetcher(query) {
 
 function App() {
 	return (
-		<Voyager introspection={graphQLFetcher}></Voyager>
+		<Voyager introspection={graphQLFetcher} />
 	)
 }
 

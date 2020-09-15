@@ -35,8 +35,8 @@ class WPGraphQLVoyager {
 
 	public function register_admin_page() {
 		add_menu_page(
-			__( 'GraphiQL', 'wp-graphql-voyager' ),
-			'GraphiQL',
+			__( 'GraphQL Voyager', 'wp-graphql-voyager' ),
+			'GraphQL Voyager',
 			'manage_options',
 			'wp-graphql-voyager/wp-graphql-voyager.php',
 			[ $this, 'render_admin_page' ],
