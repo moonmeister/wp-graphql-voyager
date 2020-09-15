@@ -8,40 +8,14 @@ import "whatwg-fetch"
 import './app.css';
 import 'graphql-voyager/dist/voyager.css'
 
-// const parameters = {}
-
-// window.location.search
-// 	.substr(1)
-// 	.split(`&`)
-// 	.forEach(function (entry) {
-// 		var eq = entry.indexOf(`=`)
-// 		if (eq >= 0) {
-// 			parameters[decodeURIComponent(entry.slice(0, eq))] = decodeURIComponent(entry.slice(eq + 1).replace(/\+/g, '%20'))
-// 		}
-// 	})
-
-// // Derive a fetch URL from the current URL, sans the GraphQL parameters.
-// const graphqlParamNames = {
-// 	query: true,
-// 	variables: true,
-// 	operationName: true,
-// 	explorerIsOpen: true,
-// }
-
-// const otherParams = {}
-
-// for (var k in parameters) {
-// 	if (parameters.hasOwnProperty(k) && graphqlParamNames[k] !== true) {
-// 		otherParams[k] = parameters[k]
-// 	}
-// }
 
 const nonce = (window.wpGraphQLVoyagerSettings && window.wpGraphQLVoyagerSettings.nonce) ? window.wpGraphQLVoyagerSettings.nonce : null;
 const endpoint = (window.wpGraphQLVoyagerSettings && window.wpGraphQLVoyagerSettings.graphqlEndpoint) ? window.wpGraphQLVoyagerSettings.graphqlEndpoint : window.location.origin;
+// const endpoint = `http://swapi.apis.guru`
 
 
-function graphQLFetcher(query) {
-	return fetch(endpoint, {
+async function graphQLFetcher(query) {
+	const resp = await fetch(endpoint, {
 		method: `post`,
 		headers: {
 			Accept: `application/json`,
@@ -50,12 +24,14 @@ function graphQLFetcher(query) {
 		},
 		body: JSON.stringify({ query }),
 		credentials: `include`,
-	}).then(resp => resp.json())
+	})
+
+	return resp.json()
 }
 
 function App() {
 	return (
-		<Voyager introspection={graphQLFetcher} />
+		<Voyager introspection={graphQLFetcher} displayOptions={{ skipDeprecated: false }} />
 	)
 }
 

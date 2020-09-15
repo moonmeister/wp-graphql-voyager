@@ -1,9 +1,9 @@
 #wp-graphql-voyager {
-    display: flex;
-    flex: 1;
+    /* display: flex; */
+    /* flex: 1; */
 }
 
 #wp-graphql-voyager .spinner{
-    visibility: visible;
-    background: none;
+    /* visibility: visible; */
+    /* background: none; */
 }

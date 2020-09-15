@@ -91,14 +91,6 @@ class WPGraphQLVoyager {
 		return WPGRAPHQL_VOYAGER_PLUGIN_DIR . 'assets/app/build/' . $manifest['main.js'];
 	}
 
-	public function get_app_script_helpers() {
-		$manifest = $this->get_app_manifest();
-		if ( empty( $manifest['main.js'] ) ) {
-			return '';
-		}
-		return WPGRAPHQL_VOYAGER_PLUGIN_DIR . 'assets/js/wp-graphql-voyager-helpers.js';
-	}
-
 	/**
 	 * Enqueues the stylesheet and js for the WPGraphiQL app
 	 */
